@@ -5,11 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # has_many :events, dependent: :destroy 
   has_many :hosted_events,
-    class_name :'Event',
+    class_name: "Event",
     foreign_key: :host_id
   has_many :attendances, dependent: :destroy
   has_many :attended_event,
-    through: :attendances   
+    through: :attendances,  
     source: :event
-  
-end
+end	

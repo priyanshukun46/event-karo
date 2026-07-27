@@ -1,4 +1,5 @@
 class Attendance < ApplicationRecord
   belongs_to :user
-  bel ngs_to :event
-ends 
+  belongs_to :event
+end
+

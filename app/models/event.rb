@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   scope :past, -> { where("event_date < ?", Time.current).order(event_date: :desc) }
   
   has_many :host,
-    class_name :'User'
+    class_name: 'User'
   has_many :attendances,
     dependent: :destroy
   has_many :attendee,
