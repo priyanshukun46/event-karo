@@ -17,20 +17,32 @@
                  url: registration_path(resource_name)) do |f| %>
 
       <%= render "devise/shared/error_messages", resource: resource %>
+     
+     <div class="field mb-5">
+        
+        <%= f.text_field :name,
+            placeholder: "Name",
+            autofocus:true,
+            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900
+                     placeholder-gray-400 outline-none transition focus:border-black" %>
+
+      </div>
 
       <div class="mb-5">
         <%= f.email_field :email,
             autofocus: true,
             autocomplete: "email",
             placeholder: "Email",
-            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none transition focus:border-black" %>
+            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900
+                     placeholder-gray-400 outline-none transition focus:border-black" %>
       </div>
 
       <div class="mb-5">
         <%= f.password_field :password,
             autocomplete: "new-password",
             placeholder: "Password",
-            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none transition focus:border-black" %>
+            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 
+                    placeholder-gray-400 outline-none transition focus:border-black" %>
 
         <% if @minimum_password_length %>
           <p class="mt-2 text-xs text-gray-400">
@@ -43,11 +55,13 @@
         <%= f.password_field :password_confirmation,
             autocomplete: "new-password",
             placeholder: "Confirm Password",
-            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none transition focus:border-black" %>
+            class: "w-full rounded-xl border border-gray-300 bg-white px-4 py-3 
+                    text-gray-900 placeholder-gray-400 outline-none transition focus:border-black" %>
       </div>
 
       <%= f.submit "Continue",
-          class: "w-full rounded-full bg-black py-3 text-white font-medium transition hover:bg-gray-800 cursor-pointer" %>
+          class: "w-full rounded-full bg-black py-3 text-white font-medium transition hover:bg-gray-800 
+          cursor-pointer" %>
 
     <% end %>
 

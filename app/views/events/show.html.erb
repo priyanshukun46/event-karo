@@ -3,6 +3,10 @@
 <%= render @event %>
 
 <div>
+  <%= button_to "Attend Event",
+      attendances_path,
+      method: :post,
+      params: { event_id: @event.id } %>
   <%= link_to "Edit this event", edit_event_path(@event) %> |
   <%= link_to "Back to events", events_path %>
 
